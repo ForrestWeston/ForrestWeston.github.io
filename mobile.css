@@ -1,0 +1,32 @@
+html {
+	font-size: 16px;
+}
+body{
+    font-family: 'Segoe UI';
+    color: wheat;
+    background: black;
+}
+.wrapper{
+	 
+}
+.tile-holder{
+
+	-webkit-column-count: 1;
+	-moz-column-count: 1;
+	column-count: 1;
+	width: 24.75rem;
+
+	height: 49.5rem;
+	margin: 0 auto;
+}
+.tile{
+    background-color: #2672EC;
+    color: black;
+    font-size: 3rem;
+    text-align: center;
+    float: left;
+    width: 11.68rem;
+    height: 11.687rem;
+    margin: 0 .687rem .687rem 0;
+}
+
