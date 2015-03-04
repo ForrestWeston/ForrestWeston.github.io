@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.10.4.min.js"></script>
+    <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" media="only screen and (max-width: 965px)" href="mobile.css">
+    <link rel="stylesheet" type="text/css" media="only screen and (min-width: 966px)" href="desktop.css">
+    <title>Forrest Weston Homework 1</title>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var tileHolder = $('.tile-holder');
+            var insertColor = ["#2672EC", "#00A300", "#97009F", "#094DB5",
+                               "#DA532C", "#AF1A3F", "#613CBC", "#008AD2"];
+            var insertSize;
+            var insertText = ["fa-film", "fa-github-alt", "fa-instagram",
+                              " fa-wifi", "fa-music", "fa-rss", "fa-tumblr-square",
+                              "fa-twitter-square", "fa-birthday-cake", "fa-windows",
+                              "fa-soundcloud", "fa-university", "fa-glass"];
+            var rand = Math.floor(Math.random() * ((64 - 34) + 34));
+            for (var i = 0; i < rand+34; i++)
+            {
+                rand = Math.floor((Math.random() * insertText.length));//rand number from 0 to 8
+                
+                if(i % 5 == 0)
+                    tileHolder.append('<div class="tile tile-large hvr-radial-in"><div class="front"><h1><i class="fa ' + insertText[rand] + '"></i></h1></div></h1><div class="back">NEAT-OH</div></div>')
+                
+                else
+                    tileHolder.append('<div class="tile hvr-radial-in"><div class="front"><h1><i class="fa ' + insertText[rand] + '"></i></h1></div><div class="back">NEAT-OH</div></div>')
+                
+            }
+            var myElements = document.querySelectorAll(".tile");
+            for(var i = 0; i < myElements.length; i++)
+            {
+                rand = Math.floor((Math.random() * 8) + 1);//rand number from 0 to 8
+                var tileSize = Math.floor(Math.random() * 2) + 1
+                myElements[i].style.backgroundColor = insertColor[rand];
+               
+            }
+
+        });
+        //modified the scroll effect from here
+        //http://stackoverflow.com/questions/11913229/body-scroll-with-mouse-position
+        $(document).mousemove(function (e) {
+            $("html, body").scrollLeft(function (i, v) {
+                var h = $(window).height();
+                var y = e.clientX - h / 2;
+                return v + y * 0.1;
+            });
+        });
+       
+    </script>
+</head>
+
+
+
+<body>
+    <header><h1>Forrest Weston</h1></header>
+    <div class="wrapper">
+        <div class="tile-holder">
+        </div>
+    </div>
+
+</body>
+</html>
