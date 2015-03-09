@@ -3,8 +3,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.4.min.js"></script>
     <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="stylesheet" type="text/css" media="only screen and (max-width: 965px)" href="mobile.css">
@@ -25,13 +25,13 @@
             for (var i = 0; i < rand+34; i++)
             {
                 rand = Math.floor((Math.random() * insertText.length));//rand number from 0 to 8
-                
+
                 if(i % 5 == 0)
                     tileHolder.append('<div class="tile tile-large hvr-radial-in"><div class="front"><h1><i class="fa ' + insertText[rand] + '"></i></h1></div></h1><div class="back">NEAT-OH</div></div>')
-                
+
                 else
                     tileHolder.append('<div class="tile hvr-radial-in"><div class="front"><h1><i class="fa ' + insertText[rand] + '"></i></h1></div><div class="back">NEAT-OH</div></div>')
-                
+
             }
             var myElements = document.querySelectorAll(".tile");
             for(var i = 0; i < myElements.length; i++)
@@ -39,7 +39,7 @@
                 rand = Math.floor((Math.random() * 8) + 1);//rand number from 0 to 8
                 var tileSize = Math.floor(Math.random() * 2) + 1
                 myElements[i].style.backgroundColor = insertColor[rand];
-               
+
             }
 
         });
@@ -52,7 +52,7 @@
                 return v + y * 0.1;
             });
         });
-       
+
     </script>
 </head>
 
